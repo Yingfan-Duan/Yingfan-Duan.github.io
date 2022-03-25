@@ -14,8 +14,9 @@ future: true
 # SNS settings
 RSS: false
 github_username:    Yingfan-Duan
+linkedin_username:  yingfanduan
 #facebook_username:  huxpro
-#linkedin_username:  firstname-lastname-idxxxx
+
 
 
 
