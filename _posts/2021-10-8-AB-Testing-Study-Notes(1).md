@@ -6,6 +6,7 @@ date:       2021-10-8 21:00:00
 author:     "Yingfan"
 catalog: false
 header-style: text
+mathjax: true
 tags:
   - AB Testing
 ---
