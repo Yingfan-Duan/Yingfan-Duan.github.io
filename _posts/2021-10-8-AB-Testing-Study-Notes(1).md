@@ -50,7 +50,7 @@ Want to make a change to the start button color of audacity's website.
 
    > A typical user flow chart
    >
-   > ![](/img/in-post/post-funnel.png)
+   > ![](/img/in-post/post-ab-testing/post-funnel.png)
 
 3. **Compute metrics**
 
@@ -70,7 +70,9 @@ Want to make a change to the start button color of audacity's website.
 
      For comparing two samples, we calculate the **pooled standard error**. For e.g., suppose  X~cont~ and N~cont~ are the control number of users that click, and the total number of users in the control group. Let X~exp~ and N~exp~ be the values for the experiment.
 
-     ![image-20210920185233123](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210920185233123.png)the confidence interval is:
+     ![](/img/in-post/post-ab-testing/post-hypothesis.png)
+
+     the confidence interval is:
 
    $$
    [d-1.96*SE_{pool}, d+1.96*SE_{pool}]
@@ -80,7 +82,7 @@ Want to make a change to the start button color of audacity's website.
 
    - size vs power:
 
-     ![image-20210925154438338](C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210925154438338.png)
+     ![](/img/in-post/post-ab-testing/post-experiment-size.png)
 
    - Increase the number of samples: α is the same, β will be lower
 
@@ -122,11 +124,11 @@ Want to make a change to the start button color of audacity's website.
    # cf_max = 0.03764645
    ```
 
-   <img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210925162506758.png" alt="image-20210925162506758" style="zoom: 33%;" />
+   ![](/img/in-post/post-ab-testing/post-example1.png)
 
    The confidence interval is [0.0202, 0.0375], which means **there is at least 2.02% change** at the 95% confidence level. And it is larger than the minimum practical significance value (2%). Thus we will **launch the new version**. 
 
-<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210925163415080.png" alt="image-20210925163415080" style="zoom:67%;" />
+![](/img/in-post/post-ab-testing/post-confi-interval.png)
 
 **A standard case to launch the new version**: The point estimate (the center of confidence interval) should exceed the practical significance value and the confidence interval shouldn't include zero, the left boundary should exceed d~min~ as well. 
 
