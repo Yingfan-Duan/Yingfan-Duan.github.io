@@ -76,7 +76,7 @@ ga_domain: huangxuan.me
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "段颖凡，芝加哥大学分析学硕士在读，数据科学爱好者。<br> An enthusiastic data scientist & statistical professional."
-sidebar-avatar: /img/avatar-hux.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/yingfan_sidebar.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -100,31 +100,7 @@ page-mathjax: false
 # Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-        title: "乱序（Midare）",
-        href: "http://mida.re/"
-    },{
-        title: "Sherry Woo",
-        href: "https://sherrywoo.me/"
-    },{
-        title: "Kun Qian",
-        href: "http://kunq.me"
-    },{
-        title: "Ebn Zhang",
-        href: "http://ebnbin.com/"
-    },{
-        title: "SmdCn",
-        href: "http://blog.smdcn.net"
-    },{
-        title: "JiyinYiyong",
-        href: "http://tiye.me/"
-    },{
-        title: "DHong Say",
-        href: "http://dhong.co"
-    },{
-        title: "尹峰以为",
-        href: "http://ingf.github.io/"
+        title: "Jace Yang",
+        href: "https://github.com/Jace-Yang"
     }
 ]
