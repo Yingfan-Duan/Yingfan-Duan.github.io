@@ -50,7 +50,7 @@ Want to make a change to the start button color of audacity's website.
 
    > A typical user flow chart
    >
-   > <img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20210920173415183.png" alt="image-20210920173415183" style="zoom:67%;" />
+   > ![](/img/in-post/post-funnel.png)
 
 3. **Compute metrics**
 
