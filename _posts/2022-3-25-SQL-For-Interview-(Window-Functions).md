@@ -54,11 +54,11 @@ window_func() over (partition by [<col1>,<col2>,…]
 - **windowing_clause**
 
   - 从句缺失时：
-
-  - - order by 指定，窗口从句缺失，则窗口的默认值为range between unbounded preceding and current row，也就是从第一行到当前行；
+- - order by 指定，窗口从句缺失，则窗口的默认值为range between unbounded preceding and current row，也就是从第一行到当前行；
     - order by 和窗口从句如果都缺失，则窗口的默认值为range between unbounded preceding and unbounded following，即从第一行到最后一行。
-
   - <u>序列函数</u>(row_number, rank, etc)不支持窗口选取子句。
+
+  > row_number, rank, dense_rank这三个函数的区别主要在分数一致的情况下，row_number()不重复排序，rank()重复且跳数字排序，dense_rank()重复且不跳数字排序
 
 - execution order
 
