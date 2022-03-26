@@ -69,7 +69,7 @@ window_func() over (partition by [<col1>,<col2>,…]
 
 data table:
 
-![](../img/in-post/post-sql/post-hive-ex1.png)
+![](/img/in-post/post-sql/post-hive-ex1.png)
 
 1. 统计淘宝2021年4月各行业购买订单数及总购买订单数
 
@@ -85,7 +85,7 @@ data table:
    
    ```
 
-   ![](../img/in-post/post-sql/post-hive-ex2.png)
+   ![](/img/in-post/post-sql/post-hive-ex2.png)
 
 2. 统计顾客的购买明细及月购买总额
 
@@ -94,7 +94,7 @@ data table:
    from emp_table
    ```
 
-   ![](../img/in-post/post-sql/post-hive-ex3.png)
+   ![](/img/in-post/post-sql/post-hive-ex3.png)
 
 3. 统计各行业月订单金额，并求按月的累计金额
 
@@ -109,7 +109,7 @@ data table:
    
    ```
 
-   ![](../img/in-post/post-sql/post-hive-ex4.png)
+   ![](/img/in-post/post-sql/post-hive-ex4.png)
 
 4. 各种聚合作用说明
 
