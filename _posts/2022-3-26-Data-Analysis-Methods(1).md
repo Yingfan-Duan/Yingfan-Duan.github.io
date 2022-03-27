@@ -6,6 +6,7 @@ date:       2022-3-26 18:00:00
 author:     "Yingfan"
 catalog: true
 header-style: text
+mathjax: true
 tags:
   - data analysis
   - study notes
