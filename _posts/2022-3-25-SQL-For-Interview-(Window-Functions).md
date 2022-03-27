@@ -8,6 +8,7 @@ catalog: false
 header-style: text
 tags:
   - SQL
+  - study notes
   - interview
 ---
 
