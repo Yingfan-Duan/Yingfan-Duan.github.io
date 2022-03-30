@@ -94,6 +94,170 @@ tags:
   group by ad_id
   ```
 
-  ## Create & Insert 
+
+## Create & Insert 
+
+- Create table (common empty table)
+
+  ```sql
+  create table if not exists actor(
+      actor_id smallint(5) not null comment '主键id',
+      first_name varchar(45) not null comment '名字',
+      last_name varchar(45) not null comment '姓氏',
+      last_update date not null comment '日期',
+      primary key (actor_id))
+  ```
+
+- create duplicate table 
+
+  ```sql
+  create table table name like table name2
+  ```
 
   
+
+- create table 1 from part of table 2
+
+  ```sql
+  create table if not exixts actor_name
+  (first_name varchar(45) not null,
+   last_name  varchar(45) not null)
+  select first_name,last_name from actor;
+  ```
+
+## create index
+
+- **use ALTER**
+
+  - 添加**主键**
+
+    `````SQL
+    ALTER TABLE tbl_name ADD PRIMARY KEY (col_list);``// 该语句添加一个主键，这意味着索引值必须是唯一的，且不能为NULL。
+    `````
+
+  - 添加**唯一索引**
+
+    ```sql
+    ALTER TABLE tbl_name ADD UNIQUE index_name (col_list);``// 这条语句创建索引的值必须是唯一的。
+    ```
+
+  - 添加**普通索引**
+
+    ```sql
+    ALTER TABLE tbl_name ADD INDEX index_name (col_list);``// 添加普通索引，索引值可出现多次。
+    ```
+
+  - 添加**全文索引**
+
+    ```sql
+    ALTER TABLE tbl_name ADD FULLTEXT index_name (col_list);``// 该语句指定了索引为 FULLTEXT ，用于全文索引。
+    ```
+
+  - 添加外键约束
+
+    ```sql
+    创建外键语句结构：
+    ALTER TABLE <表名>
+    ADD CONSTRAINT FOREIGN KEY (<列名>)
+    REFERENCES <关联表>（关联列）
+    ```
+
+  - 删除索引
+
+    ```sql
+    DROP INDEX index_name ON tbl_name;``// 或者``ALTER TABLE tbl_name DROP INDEX index_name；``ALTER TABLE tbl_name DROP PRIMARY KEY;
+    ```
+
+- **Use create**
+
+  - 添加**普通索引**
+
+    ```sql
+    create index 索引名 on 表名(col1, col2, ..., )
+    ```
+
+  - 添加**唯一索引**
+
+    ```{sql}
+    create unique index 索引名 on 表名(col1, col2, ..., )
+    ```
+
+- **区别**
+
+  - **Alter**可以省略索引名。如果省略索引名，数据库会默认**根据第一个索引列**赋予一个名称；**Create**必须指定索引名称。
+  - **Create**不能用于创建**Primary key**索引；
+  - **Alter**允许一条语句同时**创建多个索引**；**Create**一次只能**创建一个索引**
+
+- **强制索引**
+
+  - 使用强制索引查询
+
+    ```sql
+    SELECT * 
+    FROM table_name 
+    FORCE INDEX (index_list)
+    WHERE condition; 
+    ```
+
+    在此语法中，将`FORCE INDEX`子句放在FROM子句之后，后跟查询优化器必须使用的命名索引列表。
+
+  - 强制索引的优点
+
+## Add column
+
+```sql
+ALTER TABLE <表名> ADD COLUMN <新字段名> <数据类型> [约束条件] [FIRST|AFTER 已存在的字段名];
+
+# example
+alter table actor 
+add column create_date datetime not null default '2020-10-01 00:00:00' after last_update;
+```
+
+## 触发器
+
+SQL41
+
+## update
+
+```sql
+update table name 
+set col1=val1, col2=val2,...
+where condition;
+
+update table name 
+set col1 = replace(col1, val1, val2)
+where id = 5(some condition)
+```
+
+
+
+## View
+
+- defination
+
+  在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。
+
+  视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。
+
+  您可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，也可以呈现数据，就像这些数据来自于某个单一的表一样。
+
+- usage
+
+  ```{sql}
+  # create view
+  CREATE VIEW view_name AS
+  SELECT column_name(s)
+  FROM table_name
+  WHERE condition;
+  
+  # update view
+  CREATE OR REPLACE VIEW view_name AS
+  SELECT column_name(s)
+  FROM table_name
+  WHERE condition
+  
+  # delete view
+  DROP VIEW view_name
+  ```
+
+  > 视图总是显示最新的数据！每当用户查询视图时，数据库引擎通过使用视图的 SQL 语句重建数据。
