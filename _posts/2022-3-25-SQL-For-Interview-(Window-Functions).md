@@ -7,7 +7,7 @@ author:     "Yingfan"
 catalog: false
 header-style: text
 tags:
-  - SQL
+  - sql
   - study notes
   - interview
 ---
