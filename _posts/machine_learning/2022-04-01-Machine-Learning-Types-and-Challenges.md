@@ -15,19 +15,40 @@ tags:
 
 # Types of Machine Learning
 
+Machine Learning systems can be classified according to the amount and type of supervision they get during training。
+
 ## Supervised/Unsupervised Learning 
 
 ### Supervised Learning 
 
+- the training set you feed to the algorithm includes the desired solutions, called **labels**
+- 
+- most important supervised learning algorithms：
+  - k-Nearest Neighbors 
+  - Linear Regression 
+  - Logistic Regression 
+  - Support Vector Machines (SVMs) 
+  - Decision Trees and Random Forests 
+  - Neural networks
+
 ### Unsupervised Learning 
 
+
+
 ### Semi-supervised Learning 
+
+- deal with data that’s partially labeled；plenty of unlabeled instances, and few labeled instances
+- example
+  - photo-hosting services, such as Google Photos
+  - 
 
 ### Reinforcement Learning
 
 ## Batch vs Online Learning 
 
 ### Batch Learning 
+
+- 
 
 ### Online Learning 
 
