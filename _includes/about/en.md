@@ -1,4 +1,4 @@
-Hi, I am Yingfan Duan. :smiley:
+Hi, I am Yingfan Duan. 🥰
 
 I am an enthusiastic data scientist. My current interests of data science range from data preprocessing and visualization to various machine learning models based on python. I used R mainly several years ago, working on visualization, web-scraping, data preprocessing and building shiny app.  I also have experience of big data platforms such as Hadoop, PySpark and GCP and I am still learning AWS. 
 
