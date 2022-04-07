@@ -217,6 +217,15 @@ add column create_date datetime not null default '2020-10-01 00:00:00' after las
 
 SQL41
 
+````sql
+
+drop trigger trigger_name
+````
+
+
+
+- 
+
 ## update
 
 ```sql
