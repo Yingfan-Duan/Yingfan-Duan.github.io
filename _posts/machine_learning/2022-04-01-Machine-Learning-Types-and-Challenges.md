@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning: Types and Challenges"
-subtitle: "lecture notes for machine learning course"
+subtitle: "An overall introduction to machine learning"
 layout: post
 author: "Yingfan"
 header-style: text
@@ -88,7 +88,7 @@ Machine Learning systems can be classified according to the amount and type of s
 
 ## Instance-Based vs Model-Based Learning 
 
-categorize Machine Learning systems is by how they generalize. When making predictions, the system needs to be able to make good predictions for (generalize to) examples it has never seen before given a number of training examples.
+categorize Machine Learning systems is by how they generalize. When making predictions, the system needs to be able to make good predictions for (generalize to) examples it has never seen before given a number of training examples. 
 
 ### Instance-Based Learning 
 
@@ -98,6 +98,8 @@ Take spam filter as an example.
 - also flag emails that are very similar to known spam email
 
 These two methods are both instance-based learning.
+
+**Relies on a similarity measure to make predictions.**
 
 ### Model-Based Learning
 
