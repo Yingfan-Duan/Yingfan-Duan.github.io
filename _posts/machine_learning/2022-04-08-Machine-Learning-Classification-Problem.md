@@ -137,7 +137,7 @@ roc_auc_score(y_train_5, y_scores)
   - **How to choose**
 
     - Some algorithms (such as Support Vector Machine classifiers) **scale poorly with the size of the training set**. For these algorithms **OvO is preferred** because it is faster to train many classifiers on small training sets than to train few classifiers on large training sets.
-      - For **most binary classification algorithms**, however, **OvR is preferred** 
+    - For **most binary classification algorithms**, however, **OvR is preferred** 
 
     ```python
     from sklearn.multiclass import OneVsRestClassifier
