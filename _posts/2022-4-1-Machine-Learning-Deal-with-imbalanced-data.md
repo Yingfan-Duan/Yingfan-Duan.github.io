@@ -49,7 +49,7 @@ Among these four metrics, how should we choose the right metric for our problem?
 - f1 score can be chosen if there is no preference
 - f1 score is more explainable than pr auc
 
-> Reference to this [blog]() about the metrics comparison in classification problem.
+> Reference to this [blog](https://yingfan-duan.github.io/2022/04/08/Machine-Learning-Classification-Problem/) about the metrics comparison in classification problem.
 
 ## Resampling Techniques
 
