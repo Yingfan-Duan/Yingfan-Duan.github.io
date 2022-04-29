@@ -47,6 +47,7 @@ tags:
   - K-Means algorithm does not behave very well when the blobs have **very different diameters**
   
 - **hard and soft clustering**
+  
   - hard clustering: assign each instance to a cluster
   - soft clustering: give each instance a score per cluster
     - score can be the distance or similarity score (such as Gaussian Radia Basis Function)
@@ -61,17 +62,22 @@ tags:
   
     - vary between -1 and +1
   
+    - $\frac{b-a}{max(a,b)}$
+  
+      - a is the mean distance to the other instances in the same cluster
+      - b is the mean distance to the instances of the next closest cluster
+    
     - **+1** means the instance is **well** inside its own cluster and far from other clusters
-  
+    
     - **0** means the instance is close to a **cluster boundary**
-  
+    
     - **-1** means the instance may have been assigned to the **wrong cluster**
   
     - ```python
       from sklearn.metrics import silhouette_score 
       score = silhouette_score(X, kmeans.labels_)
       ```
-  
+    
     - The larger silhouette score, the better the cluster is
   
 - **Limitations**
