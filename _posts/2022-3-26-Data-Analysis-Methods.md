@@ -43,7 +43,7 @@ Study notes based on [Liuge's articles](https://www.nowcoder.com/profile/1637684
 |                      | Interquartile range(四分位距)      | 四分位差不受极值的影响；一定程度上说明了中位数对一组数据的代表程度 |
 |                      | 方差，标准差                       | NULL                                                         |
 |                      | coefficient of variation(离散系数) | $$cv=\frac{\sigma}{\mu}$$; allow relative comparison of two measurement(单位不同) |
-| 分布形状             | skewness(偏度)                     | ![](/img/in-post/post-stats/post-skewness.png)               |
+| 分布形状             | skewness(偏度)                     | 样本的三阶标准化矩；![](/img/in-post/post-stats/post-skewness.png) |
 |                      | Kurtosis(峰度)                     | 如果峰度大于三，峰的形状比较尖，比正态分布峰要陡峭           |
 
 **Example**: 某电商平台用户的平均成交金额为20，成交金额的中位数为0，标准差为80，用户成交的分布呈现左偏长尾，请问从以上数据可以得出哪些结论？
