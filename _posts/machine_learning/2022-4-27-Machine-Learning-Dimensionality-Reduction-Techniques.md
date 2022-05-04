@@ -133,7 +133,6 @@ tags:
   inc_pca.fit(X_mm)
   ```
 
-  
 
 ### Kernel PCA
 
