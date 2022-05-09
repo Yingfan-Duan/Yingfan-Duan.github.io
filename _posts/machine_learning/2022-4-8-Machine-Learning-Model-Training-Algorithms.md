@@ -37,9 +37,10 @@ tags:
 
 - **The general idea** of Gradient Descent is to tweak parameters iteratively in order to minimize a cost function.
 - **gradient** is a vector that points in the direction in which the error function would increase the most if we take a tiny step of size $η$
--  **learning rate**: The size of the step we take - η - 
+- **learning rate**: The size of the step we take $η$ 
   - When η is too small, it might take us a lot of steps to reach the minimum 
   - When η is too large, it might keep overshooting the minimum
+
 - **Steps**:
   - computes a gradient of the error function with respect to the parameters in the point of the parameter space
   - take a step in the direction opposite to where the gradient points: $\theta^{next step}= \theta - η\nabla_\theta Error(\theta)$
