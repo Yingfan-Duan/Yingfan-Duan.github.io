@@ -152,4 +152,92 @@ Using different initialization or activation functions can significantly reduce 
 # Fast Optimizers
 
 - **Momentum Optimization**
-- 
+
+  - The next step is determined by both the local gradient and also the previous momentum
+
+- **Nesterov momentum optimization**
+
+  - measures the gradient of the cost function not at the local position $θ$ but slightly ahead in the direction of momentum $θ + βm$
+
+- **AdaGrad algorithm**
+
+  - could correct the direction earlier to point a bit more toward the global optimum
+  - **Adaptive learning rate**: AdaGrad algorithm decays the learning rate. And it does so faster for steep dimensions than for dimensions with gentler slopes
+
+  - **Benefit**
+    - requires much less tuning of the learning rate hyperparameter
+  - **drawbacks**
+    - stops too early when training neural networks
+
+- **RMSProp**
+
+  - accumulating only the gradients from the most recent iterations 
+  - It does so by using exponential decay in the first step
+  - This fixes the problem of AdaGrad where it might never converges to the global optimum
+  - **RMSProp almost always outperforms AdaGrad**
+
+- **Adam** (adaptive moment estimation)
+
+  - combines the ideas of momentum optimization and RMSProp
+  - Adam scales down the parameter updates by the l2 norm of the time-decayed gradients
+
+- **AdaMax**
+
+  - use another way to scales down the parameter updates
+  - **more stable than Adam**
+    - really depends on the dataset, and **in general Adam performs better**
+
+- **Nadam optimization**
+
+  - Adam optimization plus the Nesterov trick
+  - often converge slightly faster than Adam.
+
+- **summary**
+
+  ![](/img/in-post/post-optimization.png)
+
+# Learning Rate scheduling
+
+### What is learning rate scheduling?
+
+Finding a good learning rate is very important.
+
+![](/img/in-post/post-learning-rate.png)
+
+**Learning schedules**: start with a large learning rate and then reduce it once training stops making fast progress, you can reach a good solution faster than with the optimal constant learning rate
+
+### Types of learning rate scheduling
+
+- **power scheduling**
+  - This schedule first drops quickly, then more and more slowly.
+- **exponential scheduling**
+  - $η$ will gradually drop by a factor of 10 every $s$ steps
+- **Piecewise constant scheduling**
+  - Use a constant $η$ for a number of epoch, then - a smaller one for a number of epochs, etc
+- **performance scheduling** 
+  - Measure the validation error every N steps
+  - then reduce the learning rate by a factor of $λ$ when the error stops dropping
+- **1cycle scheduling**
+
+**Summary**
+
+exponential decay, performance scheduling, and 1cycle can considerably speed up convergence
+
+# Avoid Overfitting 
+
+### l1,l2 regularization
+
+
+
+### Dropout
+
+- At every training step, every neuron (including the input neurons, but always excluding the output neurons) has a probability p of being temporarily “dropped out”, meaning it will be entirely ignored during this training step, but it may be active during the next step
+- The hyperparameter p is called the dropout rate, and it is typically set between 10% and 50%:
+  - closer to 20-30% in recurrent neural nets and closer to 40–50% in convolutional neural networks
+- After training, neurons don’t get dropped anymore
+- **Alpha dropout**
+  - If you want to regularize a self-normalizing network based on the SELU activation function, you should use alpha dropout: this is a variant of dropout that preserves the mean and standard deviation of its inputs
+
+### Monte Carlo Dropout
+
+- MC Dropout can boost the performance of any trained dropout model without having to retrain it or even modify it at all, provides a much better measure of the model’s uncertainty, and is also amazingly simple to implement.
