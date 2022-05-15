@@ -53,7 +53,7 @@ Both these problems will make **training extremely slow**.
   | Randomized leaky ReLU (RReLU)      | $α$ is picked randomly in a given range during training; is **fixed** to an average value during testing |                                                              |
   | Parametric leaky ReLU (PReLU)      | α is a parameter to be learned during training               |                                                              |
   | **Exponential linear unit (ELU):** | ![](/img/in-post/post-elu.png)                               |                                                              |
-  | **Scaled ELU (SELU)**              | if all hidden layers use the SELU activation function, then the network will **self-normalize** and solve the vanishing/exploding gradients problem | (1)The input features must be standardized (mean 0 and standard deviation 1); (2) LeCun normal initialization; (3) sequential architecture |
+  | **Scaled ELU (SELU)**              | if all hidden layers (must be **dense layer**) use the SELU activation function, then the network will **self-normalize** and solve the vanishing/exploding gradients problem | (1)The input features must be standardized (mean 0 and standard deviation 1); (2) LeCun normal initialization; (3) sequential architecture |
 
 - **Preferences**
 
@@ -227,11 +227,15 @@ exponential decay, performance scheduling, and 1cycle can considerably speed up 
 
 ### l1,l2 regularization
 
-
+- We can use l1 and l2 regularization for neural networks
+- These regularizations are applied to **the weights of each layer**
+- 
 
 ### Dropout
 
 - At every training step, every neuron (including the input neurons, but always excluding the output neurons) has a probability p of being temporarily “dropped out”, meaning it will be entirely ignored during this training step, but it may be active during the next step
+- A unique neural network is generated at each training step.
+- The resulting neural network can be seen as an averaging ensemble of all these smaller neural networks.
 - The hyperparameter p is called the dropout rate, and it is typically set between 10% and 50%:
   - closer to 20-30% in recurrent neural nets and closer to 40–50% in convolutional neural networks
 - After training, neurons don’t get dropped anymore
@@ -241,3 +245,6 @@ exponential decay, performance scheduling, and 1cycle can considerably speed up 
 ### Monte Carlo Dropout
 
 - MC Dropout can boost the performance of any trained dropout model without having to retrain it or even modify it at all, provides a much better measure of the model’s uncertainty, and is also amazingly simple to implement.
+- acts the same during training and prediction
+- allow random dropout during prediction
+- But instead of using one result of NN, we are using the ensemble  result for prediction.
