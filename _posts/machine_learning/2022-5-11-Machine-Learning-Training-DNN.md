@@ -229,7 +229,6 @@ exponential decay, performance scheduling, and 1cycle can considerably speed up 
 
 - We can use l1 and l2 regularization for neural networks
 - These regularizations are applied to **the weights of each layer**
-- 
 
 ### Dropout
 
@@ -247,4 +246,4 @@ exponential decay, performance scheduling, and 1cycle can considerably speed up 
 - MC Dropout can boost the performance of any trained dropout model without having to retrain it or even modify it at all, provides a much better measure of the model’s uncertainty, and is also amazingly simple to implement.
 - acts the same during training and prediction
 - allow random dropout during prediction
-- But instead of using one result of NN, we are using the ensemble  result for prediction.
+- But instead of using one result of NN, we are **using the ensemble  result for prediction.**
