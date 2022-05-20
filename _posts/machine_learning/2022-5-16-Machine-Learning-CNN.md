@@ -197,13 +197,55 @@ conv = keras.layers.Conv2D(filters=32, kernel_size=3, strides=1, padding="same",
 
 ![](/img/in-post/post-senet.png)
 
-# Classification and Localization
-
-
-
-
-
 # Object detection
 
+### Intro
 
+The task of classifying and localizing multiple objects in an image is called object detection.
+
+### Metrics
+
+- The MSE often works fairly well as a cost function to train the model, but it is not a great metric to evaluate how well the model can predict bounding boxes.
+- **Intersection over Union (IoU)**
+  - the area of overlap between the predicted bounding box and the target bounding box, divided by the area of their union.
+  - ``tf.keras.metrics.MeanIoU``
+- **Mean Average Precision (mAP)**
+  - the precision/recall curve may contain a few sections where precision actually goes up when recall increases, especially at low recall values
+  - This is one of the motivations for the mAP metric
+  - compute the maximum precision you can get with at least 0% recall, then 10% recall, 20%, and so on up to 100%, and then calculate the mean of these maximum precisions. This is called the Average Precision (AP) metric.
+  - what if the system detected the correct class, but at the wrong location?
+    - One approach is to define an IOU threshold: for example, we may consider that a prediction is correct only if the IOU is greater than, say, 0.5, and the predicted class is correct: mAP
+
+### Approaches
+
+- take a CNN that was trained to classify and locate a single object, then slide it across the image
+
+- **non-max suppression**
+
+  - steps
+    - First, you need to add an extra objectness output to your CNN, to estimate the probability that a flower is indeed present in the image
+    - sigmoid activation function
+    - then drop all the bounding boxes that don’t actually contain a flower.
+    - Find the bounding box with the highest objectness score
+    - get rid of all the other bounding boxes that overlap a lot with it
+    - Repeat step two until there are no more bounding boxes to get rid of.
+  - **drawbacks**
+    - slow
+
+- **fully convolutional network (FCN)**
+
+  - replace the dense layers at the top of a CNN by convolutional layers.
+  - it can be trained and executed on images of any size
+
+  - the FCN approach is much more efficient than sliding, **since the network only looks at the image once**
+
+- **You Only Look Once (YOLO)**
+
+  - similar to FCN with the following differences
+    - YOLOv3 algorithm (there are two older versions) outputs five bounding boxes for each grid cell
+    - It also outputs 20 class probabilities per grid cell
+  - YOLOv3 predicts **an offset relative to the coordinates** of the grid cell
+
+  - Before training the neural net, YOLOv3 finds **five representative bounding box dimensions**, called anchor boxes (or bounding box priors) by **K-Means**
+  - 
 
