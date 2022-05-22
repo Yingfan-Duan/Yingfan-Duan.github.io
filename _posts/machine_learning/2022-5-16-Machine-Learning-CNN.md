@@ -70,6 +70,8 @@ A convolutional layer
 
 ```python
 conv = keras.layers.Conv2D(filters=32, kernel_size=3, strides=1, padding="same", activation="relu")
+
+# padding = "valid" means no padding
 ```
 
 
@@ -106,6 +108,7 @@ conv = keras.layers.Conv2D(filters=32, kernel_size=3, strides=1, padding="same",
 
   - max and average pooling layer can be performed along the **depth dimension** and the **spatial dimensions**
   - When apply along the depth dimension, CNN can learn to be invariant to various features
+  - The stride in pooling layers is the same as the kernel size so that there is **no overlap** in receptive fields.
 
 ### CNN architectures
 

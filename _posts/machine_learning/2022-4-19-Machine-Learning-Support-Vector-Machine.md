@@ -95,7 +95,7 @@ This is a **bell-shaped function** varying from 0 (very far away from the landma
 **Steps**
 
 - define similarity function
-- choose landmarks, for example x1= –2 and x1 = 1
+- choose landmarks, for example x1= –2 and x2 = 1
 - for each point, calculate it's new features according to landmarks. Instead of dealing with x as features of an instance, we shall use $\phi_γ(x, l_i)$ as features. 
   - For example, there are two new features for point x=-1. One is its similarity with landmark 1 x1=-2, another is x1=1.
 - Now we expand all 1d points into 2d plane (formed by similarity with two landmarks). And usually now the data will be linearly separable.
