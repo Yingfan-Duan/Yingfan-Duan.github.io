@@ -8,7 +8,7 @@ catalog: true
 header-style: text
 mathjax: true
 tags:
-  - machine learning
+  - neural network
   - lecture notes
   - model
 ---
