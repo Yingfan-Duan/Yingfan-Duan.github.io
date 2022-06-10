@@ -149,8 +149,6 @@ Study notes based on [Liuge's articles](https://www.nowcoder.com/profile/1637684
 
 例如，上了一个产品策略在灰度时效果是显著正的，结果全量了效果对全站影响为负
 
-（挖个坑，下次开AB系列文章时专门来讲 ~）
-
 ### How to avoid
 
 - **分析前：**
